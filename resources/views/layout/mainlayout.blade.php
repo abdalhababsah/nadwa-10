@@ -4,43 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Arcke - Architecture HTML5 Template</title>
-    <meta name="description" content="">
+    <title>Al Nadwa Architects - Innovating Architecture and Engineering Solutions</title>
+    <meta name="description" content="Discover Al Nadwa Architects - leaders in architecture and engineering. We create sustainable, aesthetic, and functional spaces tailored to your needs.">
+    <meta name="keywords" content="Al Nadwa Architects, Architecture, Engineering, Sustainable Design, Construction, Building Solutions, Engineering Services">
+    <meta name="author" content="Al Nadwa Architects">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Al Nadwa Architects - Innovating Architecture and Engineering Solutions">
+    <meta property="og:description" content="Discover Al Nadwa Architects - leaders in architecture and engineering. We create sustainable, aesthetic, and functional spaces tailored to your needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alnadwaarchitects.com">
+    <meta property="og:image" content="{{ asset('assets/images/Artboard1.png') }}">
+    <meta property="og:site_name" content="Al Nadwa Architects">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Al Nadwa Architects - Innovating Architecture and Engineering Solutions">
+    <meta name="twitter:description" content="Discover Al Nadwa Architects - leaders in architecture and engineering.">
+    <meta name="twitter:image" content="{{ asset('assets/images/Artboard1.png') }}">
+    <meta name="twitter:site" content="@alnadwaarchitects">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="56x56" href="{{ asset('assets/images/fav-icon/icon.png') }}">
-    <!-- bootstrap CSS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/Artboard1.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('assets/images/Artboard1.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/images/Artboard1.png') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/images/Artboard1.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/Artboard1.png') }}">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://alnadwaarchitects.com">
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Al Nadwa Architects",
+        "url": "https://alnadwaarchitects.com",
+        "logo": "{{ asset('assets/images/Artboard1.png') }}",
+        "description": "Innovating Architecture and Engineering Solutions.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Al Nadwa Street",
+            "addressLocality": "Amman",
+            "addressRegion": "Amman Governorate",
+            "postalCode": "11118",
+            "addressCountry": "Jordan"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+962123456789",
+            "contactType": "Customer Service"
+        },
+        "sameAs": [
+            "https://www.instagram.com/alnadwa.architecture/",
+            "https://www.facebook.com/Al.NadwaArchitects/"
+        ]
+    }
+    </script>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" type="text/css" media="all">
-    <!-- carousel CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" type="text/css" media="all">
-    <!-- animate CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" type="text/css" media="all">
-    <!-- animated-text CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/animated-text.css') }}" type="text/css" media="all">
-    <!-- font-awesome CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}" type="text/css" media="all">
-    <!-- font-flaticon CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}" type="text/css" media="all">
-    <!-- theme-default CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/theme-default.css') }}" type="text/css" media="all">
-    <!-- meanmenu CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.min.css') }}" type="text/css" media="all">
-    <!-- transitions CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/owl.transitions.css') }}" type="text/css" media="all">
-    <!-- venobox CSS -->
     <link rel="stylesheet" href="{{ asset('venobox/venobox.css') }}" type="text/css" media="all">
-
-    <!-- bootstrap icons -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-icons.css') }}" type="text/css" media="all">
-
-    <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" media="all">
-    <!-- responsive CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" type="text/css" media="all">
 
-    <!-- modernizr js -->
-    <script src="assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
+    <!-- Modernizr JS -->
+    <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 </head>
+
 
 <body>
 

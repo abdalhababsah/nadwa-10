@@ -9,7 +9,7 @@
                             <div class="single-slider">
                                 <div class="slider-content">
                                     <div class="slider-title">
-                                        <h4>BUILDING IN CALIFORNIA, USA</h4>
+                                        <h4>BUILDING IN AMMAN, JORDAN
                                         <h1>Build Your <span>Vision</span> <br> Creating Reality <br> New Design</h1>
                                     </div>
                                 </div>
@@ -36,8 +36,9 @@
                         <h5>FOLLOW US</h5>
                         <ul>
                             <li><a href="#"> <i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"> <i class="fab fa-twitter"> </i> </a></li>
-                            <li><a href="#"> <i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"> <i class="fab fa-insta
+                                "> </i> </a></li>
+                           
                         </ul>
                     </div>
                 </div>
@@ -51,7 +52,9 @@
                             <div class="single-slider">
                                 <div class="slider-content">
                                     <div class="slider-title">
-                                        <h4>BUILDING IN CALIFORNIA, USA</h4>
+                                        <h4>BUILDING IN AMMAN, JORDAN
+
+                                        </h4>
                                         <h1>Build Your <span>Vision</span> <br> Creating Reality <br> New Design</h1>
                                     </div>
                                 </div>
