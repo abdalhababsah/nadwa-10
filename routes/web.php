@@ -30,7 +30,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
     
     // Protected Routes (e.g., Dashboard)
-    Route::middleware([AuthMiddleware::class])->group(function () {
+    Route::middleware(['auth'])->group(function () {
         Route::get('/services', [ServiceController::class, 'index'])->name('admin.services.index'); // List services
         Route::get('/services/create', [ServiceController::class, 'create'])->name('admin.services.create'); // Show create form
         Route::post('/services', [ServiceController::class, 'store'])->name('admin.services.store'); // Store service
