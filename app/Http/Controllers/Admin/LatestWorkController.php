@@ -39,7 +39,7 @@ class LatestWorkController extends Controller
             'category'    => 'required|in:interior,exterior',
             'title'       => 'required|string|max:255',
             'description' => 'required|string',
-            'image'       => 'required|image', // Max 2MB
+            'image'       => 'required|image', 
         ]);
 
         // Handle image upload
@@ -76,7 +76,7 @@ class LatestWorkController extends Controller
              'category'    => 'required|in:interior,exterior',
              'title'       => 'required|string|max:255',
              'description' => 'required|string',
-             'image'       => 'nullable|image|max:2048', // Max 2MB
+             'image'       => 'nullable|image', // Max 2MB
          ]);
      
          // Handle image upload

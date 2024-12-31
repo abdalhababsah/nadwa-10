@@ -20,7 +20,7 @@ class ServiceController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'required|image', // Max 2MB
+            'image' => 'required|image',
         ]);
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('services', 'public'); // Save in `storage/app/public/services`
@@ -39,7 +39,7 @@ class ServiceController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image',
         ]);
     
         // Handle image upload
