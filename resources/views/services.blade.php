@@ -62,7 +62,7 @@
 					 @endif
 					 ">
 						 <div class="inner-service-tmb">
-							 <img src="{{ asset($service->image_path) }}" alt="Architecture Design Icon">
+							 <img src="{{ asset('storage/'.$service->image_path) }}" alt="Architecture Design Icon">
 						 </div>
 						 <div class="inner-service-title">
 							 <h3>{{$service->title}}</h3>
