@@ -945,6 +945,11 @@ ul.sub-menu li:hover a span{
     margin: 0 0 50px;
 }
 
+.nav-logo img
+{
+    filter: brightness(100);
+    width: 100px;
+}
 .content-thumb-box {
     padding: 0 0 20px;
 }

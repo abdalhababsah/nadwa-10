@@ -59,27 +59,27 @@
                 <div class="sidebar-info-contents">
                     <div class="content-inner">
                         <div class="nav-logo">
-                            <a href="{{route('home')}}"><img src="" alt="sid img" ></a>
+                            <a href="{{route('home')}}"><img src="{{asset('/assets/images/Artboard1.png')}}" alt="sid img" ></a>
                         </div>
                         <div class="row padding-two">
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="assets/images/resource/insta-4.jpg" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-4.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="assets/images/resource/insta-5.jpg" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-3.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="assets/images/resource/insta-2.jpg" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-2.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="assets/images/resource/insta-1.jpg" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-7.png')}}" alt="">
                                 </div>
                             </div>
                         </div>

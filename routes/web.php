@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\LatestWorkController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\ServiceController as HomeService;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
@@ -14,9 +15,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [ContactUsController::class, 'index'])->name('contact');
 Route::post('/contact/send', [ContactUsController::class, 'send'])->name('contact.send');
 // Services Page Route
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
+Route::get('/services', [HomeService::class, 'index'])->name('services');
 
 // Admin Authentication Routes
 Route::prefix('admin')->group(function () {
@@ -27,7 +26,7 @@ Route::prefix('admin')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
 
     // Handle logout
-    Route::post('/logout', [AuthController::class, 'logout'])->name('admin.logout');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('admin.logout');
     
     // Protected Routes (e.g., Dashboard)
     Route::middleware(['auth'])->group(function () {
