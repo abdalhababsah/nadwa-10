@@ -64,12 +64,12 @@
                         <div class="row padding-two">
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-4.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-5.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-3.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-9.png')}}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-6">
