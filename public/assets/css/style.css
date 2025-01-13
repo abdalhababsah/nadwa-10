@@ -1182,6 +1182,7 @@ ul.social-box li a:hover {
 }
 
 .section-title.upper .sub-title h2 {
+    text-shadow: -2px 1px 20px #000000e6;
     color: #101010;
 }
 
@@ -5045,6 +5046,8 @@ span.fill {
     color: #ffffff;
     font-weight: 500;
     margin: 0 0 0;
+    max-height: 100px;
+    overflow: hidden;
 }
 
 .project-area.one .project-button {
@@ -6440,6 +6443,10 @@ span.fill {
     position: relative;
     z-index: 1;
     top: -5px;
+}
+.testimonial-area.one .testimonial-tmb img {
+    max-width: 75px;
+    max-height: 75px;
 }
 
 .testimonial-area.one .testimonial-tmb::before {

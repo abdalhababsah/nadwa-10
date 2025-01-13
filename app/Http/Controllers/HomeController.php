@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\LatestWork;
+use App\Models\Testemonial;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,6 +18,8 @@ class HomeController extends Controller
         $interiorWorks = LatestWork::where('category', 'interior')->orderBy('created_at', 'desc')->get();
         $exteriorWorks = LatestWork::where('category', 'exterior')->orderBy('created_at', 'desc')->get();
 
-        return view('welcome', compact('services', 'interiorWorks', 'exteriorWorks'));
+        $testemonials = Testemonial::latest()->limit(6)->get();
+
+        return view('welcome', compact('services', 'interiorWorks', 'exteriorWorks', 'testemonials'));
     }
 }

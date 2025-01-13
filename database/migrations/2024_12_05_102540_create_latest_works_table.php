@@ -20,7 +20,7 @@ class CreateLatestWorksTable extends Migration
             
             $table->string('title');
             $table->text('description');
-            $table->string('image_path');
+            $table->string('image_path');//this is the main image 
             $table->timestamps();
         });
     }

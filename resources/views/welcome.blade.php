@@ -467,7 +467,7 @@
             </div>
             <div class="row">
                 @foreach ($interiorWorks as $work)
-                    <div class="col-lg-4">
+                    <a href="{{url('/latest-works', $work)}}" class="col-lg-4">
                         <div class="single-project-box">
                             <div class="project-thumb img-container">
                                 <img src="{{ asset('storage/' . $work->image_path) }}" alt="{{ $work->title }}">
@@ -477,7 +477,7 @@
                                 <h3>{{ $work->description }}</h3>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -536,7 +536,7 @@
             </div>
             <div class="row">
                 @foreach ($exteriorWorks as $work)
-                    <div class="col-lg-4">
+                    <a href="{{url('/latest-works', $work)}}" class="col-lg-4">
                         <div class="single-project-box">
                             <div class="project-thumb img-container">
                                 <img src="{{ asset('storage/' . $work->image_path) }}" alt="{{ $work->title }}">
@@ -546,7 +546,7 @@
                                 <h3>{{ $work->description }}</h3>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -575,7 +575,29 @@
                         </div>
                         <div class="testimonial-content">
                             <div class="row">
+
                                 <div class="owl-carousel testi-list">
+                                    @isset($testemonials)
+                                    @foreach ($testemonials as $testemonial)
+                                    <div class="col-lg-12">
+                                        <div class="test-box">
+                                            <div class="testimonial-description">
+                                                <p>{!! $testemonial->body !!}</p>
+                                            </div>
+                                            <div class="testimonial-tmb">
+                                                <img src="{{ asset('storage/' . $testemonial->image) }}" alt="{{ $testemonial->name }}">
+                                            </div>
+                                            <div class="testimonial-title">
+                                                <h3>{{ $testemonial->name }}</h3>
+                                                <span>{{ $testemonial->position }}</span>
+                                            </div>
+                                            <div class="testimonial-icon">
+                                                <img src="assets/images/testimonial/quote.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    @else                                  
                                     <div class="col-lg-12">
                                         <div class="test-box">
                                             <div class="testimonial-description">
@@ -616,46 +638,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-12">
-                                        <div class="test-box">
-                                            <div class="testimonial-description">
-                                                <p>“Appropriately target distributed e-services after multimediae based
-                                                    vortals. Competently leverage other's client-centric but initiatives
-                                                    without timely portals. Collaboratively harness backward-compatible
-                                                    building”</p>
-                                            </div>
-                                            <div class="testimonial-tmb">
-                                                <img src="assets/images/testimonial/test-1.png" alt="">
-                                            </div>
-                                            <div class="testimonial-title">
-                                                <h3>John D. Alexon</h3>
-                                                <span>CEO & Founder</span>
-                                            </div>
-                                            <div class="testimonial-icon">
-                                                <img src="assets/images/testimonial/quote.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <div class="test-box">
-                                            <div class="testimonial-description">
-                                                <p>“Appropriately target distributed e-services after multimediae based
-                                                    vortals. Competently leverage other's client-centric but initiatives
-                                                    without timely portals. Collaboratively harness backward-compatible
-                                                    building”</p>
-                                            </div>
-                                            <div class="testimonial-tmb">
-                                                <img src="assets/images/testimonial/test-1.png" alt="">
-                                            </div>
-                                            <div class="testimonial-title">
-                                                <h3>John D. Alexon</h3>
-                                                <span>CEO & Founder</span>
-                                            </div>
-                                            <div class="testimonial-icon">
-                                                <img src="assets/images/testimonial/quote.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endisset 
                                 </div>
                             </div>
                         </div>

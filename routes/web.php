@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Admin\TestemonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\LatestWorkController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\LatestWorkController as LatestWorkView;
 use App\Http\Controllers\ServiceController as HomeService;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\HomeController;
@@ -17,6 +19,9 @@ Route::post('/contact/send', [ContactUsController::class, 'send'])->name('contac
 // Services Page Route
 Route::get('/services', [HomeService::class, 'index'])->name('services');
 
+//latest work view page
+Route::get('/latest-works/{id}', [LatestWorkView::class, 'view']); 
+        
 // Admin Authentication Routes
 Route::prefix('admin')->group(function () {
     // Show login form
@@ -39,10 +44,16 @@ Route::prefix('admin')->group(function () {
         Route::get('/latest-works', [LatestWorkController::class, 'index'])->name('admin.latest-works.index'); // List latest works
         Route::get('/latest-works/create', [LatestWorkController::class, 'create'])->name('admin.latest-works.create'); // Show create form
         Route::post('/latest-works', [LatestWorkController::class, 'store'])->name('admin.latest-works.store'); // Store latest work
+        Route::get('/latest-works/{id}', [LatestWorkController::class, 'edit'])->name('admin.latest-works.edit'); // Update latest work
         Route::put('/latest-works/{id}', [LatestWorkController::class, 'update'])->name('admin.latest-works.update'); // Update latest work
         Route::delete('/latest-works/{id}', [LatestWorkController::class, 'destroy'])->name('admin.latest-works.destroy'); // Delete latest work
-    
 
+        Route::get('/testemonials', [TestemonialController::class, 'index'])->name('admin.testemonials.index');
+        Route::get('/testemonials/create', [TestemonialController::class, 'create'])->name('admin.testemonials.create');
+        Route::post('/testemonials', [TestemonialController::class, 'store'])->name('admin.testemonials.store');
+        Route::get('/testemonials/{id}', [TestemonialController::class, 'edit'])->name('admin.testemonials.edit');
+        Route::put('/testemonials/{id}', [TestemonialController::class, 'update'])->name('admin.testemonials.update');
+        Route::delete('/testemonials/{id}', [TestemonialController::class, 'destroy'])->name('admin.testemonials.destroy');
         
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');

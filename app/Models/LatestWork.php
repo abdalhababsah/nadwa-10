@@ -12,8 +12,9 @@ class LatestWork extends Model
     // Mass assignable attributes
     protected $fillable = ['category', 'title', 'description', 'image_path'];
 
-    /**
-     * Get the category that owns the work.
-     */
-
+    //Relationships
+    public function images()
+    {
+        return $this->hasMany(LatestWorkImage::class);
+    }
 }

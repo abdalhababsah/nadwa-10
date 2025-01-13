@@ -6,9 +6,9 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                        <h6>Latest Works Table</h6>
-                        <a class="btn btn-primary" href="{{url('admin/latest-works/create')}}">
-                           Add Latest Work</a>
+                        <h6>Testemonials Table</h6>
+                        <a class="btn btn-primary" href="{{url('admin/testemonials/create')}}">
+                           Add Testemonial</a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -25,27 +25,25 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Name</th>
                                         <th>Image</th>
-                                        <th>Category</th>
-                                        <th>Title</th>
-                                        <th>Description</th>
+                                        <th>Body</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($latestWorks as $work)
+                                    @foreach ($testemonials as $testemonial)
                                         <tr>
-                                            <td>{{ $work->id }}</td>
+                                            <td>{{ $testemonial->id }}</td>
+                                            <td>{{ ucfirst($testemonial->name) }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $work->image_path) }}"
-                                                    alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
+                                                <img src="{{ asset('storage/' . $testemonial->image) }}"
+                                                    alt="{{ $testemonial->name }}" class="img-thumbnail" style="width: 100px;">
                                             </td>
-                                            <td>{{ ucfirst($work->category) }}</td>
-                                            <td>{{ $work->title }}</td>
-                                            <td>{{ substr($work->description, 0, 100) }}</td>
+                                            <td>{{ substr($testemonial->body, 0, 100) }}</td>
                                             <td class="text-center">
-                                                <a href="{{url('/admin/latest-works', $work)}}" class="btn btn-warning btn-sm">Edit</a>
-                                                <form action="{{ route('admin.latest-works.destroy', $work->id) }}"
+                                                <a href="{{url('/admin/testemonials', $testemonial)}}" class="btn btn-warning btn-sm">Edit</a>
+                                                <form action="{{ route('admin.testemonials.destroy', $testemonial->id) }}"
                                                     method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
@@ -58,7 +56,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-between my-4">
-                                {{ $latestWorks->links('vendor.pagination.bootstrap-5') }}
+                                {{ $testemonials->links('vendor.pagination.bootstrap-5') }}
                             </div>
                         </div>
                     </div>
