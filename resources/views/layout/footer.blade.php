@@ -12,7 +12,7 @@
                             <ul>
                                 <li><i class="bi bi-telephone"></i> +962797550065</li>
                                 <li><i class="bi bi-envelope-open"></i> archnadia@hotmail.com</li>
-                                <li><i class="bi bi-envelope-open"></i> 102/B Rd, Uttar Badda <br> Dhaka - 1212</li>
+                                <li><i class="bi bi-envelope-open"></i> Amman <br> Jordan</li>
                             </ul>
                         </div>
                     </div>

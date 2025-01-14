@@ -86,19 +86,19 @@
                         <div class="contact-info">
                             <h2>Contact Info</h2>
                             <ul class="list-style-one">
-                                <li><i class="bi bi-envelope"></i>Chicago 12, Melborne City, USA</li>
-                                <li><i class="bi bi-envelope"></i>(+001) 123-456-7890</li>
-                                <li><i class="bi bi-envelope"></i>Example.com</li>
-                                <li><i class="bi bi-envelope"></i>Week Days: 09.00 to 18.00 Sunday: Closed</li>
+                                <li><i class="bi bi-envelope"></i> Amman, Jordan</li>
+                                <li><i class="bi bi-envelope"></i>(+962) 797550065</li>
+                                <li><i class="bi bi-envelope"></i>archnadia@hotmail.com</li>
+                                <li><i class="bi bi-envelope"></i>Week Days: 08.30 to 18.00 Friday & Saturday: Closed</li>
                             </ul>
                         </div>
                         <!-- Social Box -->
                         <ul class="social-box">
-                            <li class="facebook"><a href="#" class="fab fa-facebook-f"></a></li>
-                            <li class="twitter"><a href="#" class="fab fa-instagram"></a></li>
-                            <li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/Al.NadwaArchitects/" class="fab fa-facebook-f"></a></li>
+                            <li class="twitter"><a href="https://www.instagram.com/alnadwa.architecture/" class="fab fa-instagram"></a></li>
+                            <!-- <li class="linkedin"><a href="#" class="fab fa-twitter"></a></li>
                             <li class="instagram"><a href="#" class="fab fa-pinterest-p"></a></li>
-                            <li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li>
+                            <li class="youtube"><a href="#" class="fab fa-linkedin-in"></a></li> -->
                         </ul>
                     </div>
                 </div>		
