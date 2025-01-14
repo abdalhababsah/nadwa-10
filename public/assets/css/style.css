@@ -12328,9 +12328,17 @@ button.btns:hover::before{
     background: #D7AB79; 
 }
 
+a .thirtysix-icon{
+    background-image: url(../../backend/assets/img/logos/thirtysix.png);
+    display: inline-block;
+    width: 8px;
+    height: 12px;
+    background-size: cover;
+}
 
-
-
+.copy-rights a {
+    color: #f07b22;
+}
 
 
 

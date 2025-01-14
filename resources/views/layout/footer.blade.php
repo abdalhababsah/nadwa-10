@@ -41,7 +41,7 @@
         <div class="row mg-tp align-items-center">
             <div class="col-lg-12">
                 <div class="copy-rights">
-                    <h4>© Copyright Al Nadwa 2024. All Rights Reserved.</h4>
+                    <h4>Copyright <a href="https://thirtysix36.com"><span class="thirtysix-icon"></span> thirtysix36</a> 2025. All Rights Reserved.</h4>
                 </div>
                 <div class="footer-shap bounce-animate3">
                     <img src="assets/images/resource/counter-shape.png" alt="">

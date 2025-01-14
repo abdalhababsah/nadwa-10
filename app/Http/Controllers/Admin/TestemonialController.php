@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Testemonial;
 use Illuminate\Http\Request;
+use Storage;
 
 class TestemonialController extends Controller
 {
@@ -81,6 +82,7 @@ class TestemonialController extends Controller
         // Handle image upload
         if ($request->hasFile('image')) {
             $imagePath = $request->file('image')->store('testemonial', 'public');
+            Storage::disk('public')->delete($testemonial->image);
             $validated['image'] = $imagePath;
         }
 
