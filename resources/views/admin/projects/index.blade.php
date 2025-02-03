@@ -6,9 +6,9 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
-                        <h6>Latest Works Table</h6>
-                        <a class="btn btn-primary" href="{{url('admin/latest-works/create')}}">
-                           Add Latest Work</a>
+                        <h6>Projects Table</h6>
+                        <a class="btn btn-primary" href="{{url('admin/projects/create')}}">
+                           Add Project</a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -33,19 +33,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($latestWorks as $work)
+                                    @foreach ($projects as $work)
                                         <tr>
                                             <td>{{ $work->id }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
                                             </td>
-                                            <td>{{ ucfirst($work->category) }}</td>
+                                            <td>{{ $work->category }}</td>
                                             <td>{{ $work->title }}</td>
                                             <td>{{ substr($work->description, 0, 100) }}</td>
                                             <td class="text-center">
-                                                <a href="{{url('/admin/latest-works', $work)}}" class="btn btn-warning btn-sm">Edit</a>
-                                                <form action="{{ route('admin.latest-works.destroy', $work->id) }}"
+                                                <a href="{{url('/admin/projects', $work)}}" class="btn btn-warning btn-sm">Edit</a>
+                                                <form action="{{ route('admin.projects.destroy', $work->id) }}"
                                                     method="POST" style="display: inline-block;">
                                                     @csrf
                                                     @method('DELETE')
@@ -58,7 +58,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-between my-4">
-                                {{ $latestWorks->links('vendor.pagination.bootstrap-5') }}
+                                {{ $projects->links('vendor.pagination.bootstrap-5') }}
                             </div>
                         </div>
                     </div>

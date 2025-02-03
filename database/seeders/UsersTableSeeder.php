@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
         // Insert a default admin user
         DB::table('users')->insert([
             'name' => 'Admin User',
-            'email' => 'admin@yourdomain.com',
+            'email' => 'admin@alnadwaarchitects.com',
             'password' => Hash::make('password123'), // Secure password hashing
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
@@ -25,27 +25,5 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
-        // Insert sample users
-        DB::table('users')->insert([
-            [
-                'name' => 'John Doe',
-                'email' => 'john.doe@example.com',
-                'password' => Hash::make('password123'),
-                'email_verified_at' => now(),
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'name' => 'Jane Smith',
-                'email' => 'jane.smith@example.com',
-                'password' => Hash::make('password123'),
-                'email_verified_at' => now(),
-                'remember_token' => Str::random(10),
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            // Add more users as needed
-        ]);
     }
 }

@@ -19,22 +19,24 @@
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                        <h6 class="text-white text-capitalize ps-3">Create Latest Work</h6>
+                        <h6 class="text-white text-capitalize ps-3">Create Project</h6>
                     </div>
                 </div>
                 <div class="card-body">
-                    <form id="productForm" action="{{ route('admin.latest-works.store') }}" method="POST">
+                    <form id="productForm" action="{{ route('admin.projects.store') }}" method="POST">
                         @csrf
                         <!-- Product Information Section -->
                         <div class="modal-header">
-                            <h5 class="modal-title" id="">Add Latest Work</h5>
+                            <h5 class="modal-title" id="">Add Project</h5>
                         </div>
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="category" class="form-label">Category</label>
                                 <select name="category" id="category" class="form-control" required>
-                                    <option value="interior">Interior</option>
-                                    <option value="exterior">Exterior</option>
+                                    <option value=""></option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{$category->value}}">{{$category->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="mb-3">

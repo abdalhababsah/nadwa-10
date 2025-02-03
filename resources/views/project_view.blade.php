@@ -11,7 +11,7 @@
 					<div class="breadcumb-content">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li>{{ucfirst($work->category)}} Details</li>
+							<li>{{$work->category}} Project Details</li>
 						</ul>
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 						</div>
 						<div class="service-steps-list">
 							<h3>Category</h3>
-							<p>{{$work->category}}</p>
+							<p>{{$work->category->name}}</p>
 						</div>
 					</div>
 				</div>

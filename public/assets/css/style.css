@@ -9039,7 +9039,7 @@ input.src-input-box::placeholder {
     padding: 7px 15px 7px 0;
     display: inline-block;
     font-size: 17px;
-    color: #fff;
+    color: black;
     font-weight: 400;
     position: relative;
     z-index: 1;
@@ -9144,6 +9144,8 @@ input.src-input-box::placeholder {
 
 .portfolio-showcase-area .case-study-thumb2 img {
     width: 100%;
+    height: 375px;
+    object-fit: cover;
 }
 
 .portfolio-showcase-area .showcase-button {
@@ -9227,10 +9229,6 @@ input.src-input-box::placeholder {
     font-size: 50px;
     line-height: 50px;
     margin: 0 0 0;
-    color: #101010;
-}
-
-.portfolio-showcase-area.upper .portfolio_nav ul li {
     color: #101010;
 }
 

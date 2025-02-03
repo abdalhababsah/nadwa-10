@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
-class LatestWorkImage extends Model
+class ProjectImage extends Model
 {
     protected static function boot()
     {
@@ -19,8 +19,8 @@ class LatestWorkImage extends Model
     }
 
     //Relationships
-    public function latestWork()
+    public function project()
     {
-        return $this->belongsTo(LatestWork::class);
+        return $this->belongsTo(Project::class);
     }
 }

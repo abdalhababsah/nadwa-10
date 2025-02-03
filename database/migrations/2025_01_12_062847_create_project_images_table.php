@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\LatestWork;
+use App\Models\Project;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,9 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('latest_work_images', function (Blueprint $table) {
+        Schema::create('project_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(LatestWork::class)->constrained();
+            $table->foreignIdFor(Project::class)->constrained();
             $table->string('image');
             $table->timestamps();
         });
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('latest_work_images');
+        Schema::dropIfExists('project_images');
     }
 };

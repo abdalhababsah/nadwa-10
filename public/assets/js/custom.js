@@ -73,7 +73,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
         })
         .then(data => {
             // Redirect to index on success
-            window.location.href = mainUrl+'/latest-works';
+            window.location.href = mainUrl+'/projects';
         })
         .catch(error => {
             console.error('Error:', error);
@@ -86,6 +86,8 @@ document.getElementById('submitBtn').addEventListener('click', function () {
                     if (errorElement) {
                         errorElement.style.display = 'inline';
                         errorElement.textContent = error.errors[field][0];
+                        console.log(errorElement);
+                        
                     }
                 });
             }

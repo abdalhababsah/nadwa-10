@@ -36,8 +36,7 @@
                     <h5>FOLLOW US</h5>
                     <ul>
                         <li><a href="#"> <i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"> <i class="fab fa-insta
-                                "> </i> </a></li>
+                        <li><a href="#"> <i class="fab fa-insta"> </i> </a></li>
 
                     </ul>
                 </div>
@@ -92,53 +91,6 @@
 
 <!--==================================================-->
 <!-- End slider-area -->
-<!--==================================================-->
-
-
-
-<!--==================================================-->
-<!-- Start feature-area -->
-<!--==================================================-->
-
-<div class="feature-area one upper">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-feature-box wow fadeInLeft">
-                    <div class="feature-content">
-                        <h4>01</h4>
-                        <h3>Architecture Design</h3>
-                        <p>Conveniently streamline synergistic markets multidisciplinary products. Authoritatively
-                            wire bandwidth adaptive</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-feature-box wow fadeInUp">
-                    <div class="feature-content">
-                        <h4>02</h4>
-                        <h3>Interior Design</h3>
-                        <p>Conveniently streamline synergistic markets multidisciplinary products. Authoritatively
-                            wire bandwidth adaptive</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-feature-box wow fadeInRight">
-                    <div class="feature-content">
-                        <h4>03</h4>
-                        <h3>Furniture Design</h3>
-                        <p>Conveniently streamline synergistic markets multidisciplinary products. Authoritatively
-                            wire bandwidth adaptive</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--==================================================-->
-<!-- End feature-area -->
 <!--==================================================-->
 
 
@@ -388,181 +340,6 @@
 <!--==================================================-->
 
 
-
-<!--==================================================-->
-<!-- Start service-area -->
-<!--==================================================-->
-<div class="service-area one upper">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="section-title upper">
-                    <div class="main-title">
-                        <h1>Services</h1>
-                    </div>
-                    <div class="sub-title">
-                        <h2>See Our Best <span>Services</span></h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach ($services as $index => $service)
-                <div class="col-lg-12">
-                    <div class="single-service-box wow fadeInLeft">
-                        <div class="row">
-                            <div class="col-lg-5">
-                                <div class="service-inner-box upper">
-                                    <div class="service-content">
-                                        <div class="service-title">
-                                            <h3><span>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}.</span>
-                                                {{ $service->title }}</h3>
-                                        </div>
-                                    </div>
-                                    <div class="service-thumb">
-                                        <img src="{{ asset('storage/' . $service->image_path) }}"
-                                            alt="{{ $service->title }}">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="service-inner-box">
-                                    <div class="service-content">
-                                        <div class="service-description">
-                                            <p>{{ $service->description }}</p>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <div class="service-inner-box">
-                                    <div class="service-content"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-<!--==================================================-->
-<!-- End service-area -->
-<!--==================================================-->
-
-<!--==================================================-->
-<!-- Start project-area -->
-<!--==================================================-->
-
-<div class="project-area one upper">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="section-title upper pb-3">
-                    <div class="main-title">
-                        <h1>Works</h1>
-                    </div>
-                    <div class="sub-title">
-                        <h2>Latest Interior <span>Works</span></h2>
-                    </div>
-                </div>
-                <div class="project-shap bounce-animate3">
-                    <img src="{{ asset('assets/images/resource/counter-shape.png') }}" alt="">
-                </div>
-                <div class="project-shape bounce-animate2">
-                    <img src="{{ asset('assets/images/resource/counter-shap.png') }}" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach ($interiorWorks as $work)
-                <a href="{{url('/latest-works', $work)}}" class="col-lg-4">
-                    <div class="single-project-box">
-                        <div class="project-thumb img-container">
-                            <img src="{{ asset('storage/' . $work->image_path) }}" alt="{{ $work->title }}">
-                        </div>
-                        <div class="project-content style-one">
-                            <h4>{{ strtoupper($work->title) }}</h4>
-                            <h3>{{ $work->description }}</h3>
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    </div>
-</div>
-
-
-<!--==================================================-->
-<!-- End project-area -->
-<!--==================================================-->
-<style>
-    .img-container {
-        width: 100%;
-        height: 250px;
-        /* Set your desired fixed height */
-        overflow: hidden;
-        position: relative;
-    }
-
-    /* Style for the images to cover the container without distortion */
-    .img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Ensures the image covers the container */
-        object-position: center;
-        /* Centers the image */
-        transition: transform 0.3s ease;
-        /* Smooth zoom effect on hover */
-    }
-
-    /* Optional: Zoom effect on hover */
-    .img-container:hover img {
-        transform: scale(1.05);
-    }
-</style>
-
-<div class="project-area one upper">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-12">
-                <div class="section-title upper pb-3">
-                    <div class="main-title">
-                        <h1>Works</h1>
-                    </div>
-                    <div class="sub-title">
-                        <h2>Latest Exterior<span>Works</span></h2>
-                    </div>
-                </div>
-                <div class="project-shap bounce-animate3">
-                    <img src="{{ asset('assets/images/resource/counter-shape.png') }}" alt="">
-                </div>
-                <div class="project-shape bounce-animate2">
-                    <img src="{{ asset('assets/images/resource/counter-shap.png') }}" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            @foreach ($exteriorWorks as $work)
-                <a href="{{url('/latest-works', $work)}}" class="col-lg-4">
-                    <div class="single-project-box">
-                        <div class="project-thumb img-container">
-                            <img src="{{ asset('storage/' . $work->image_path) }}" alt="{{ $work->title }}">
-                        </div>
-                        <div class="project-content style-one">
-                            <h4>{{ strtoupper($work->title) }}</h4>
-                            <h3>{{ $work->description }}</h3>
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    </div>
-</div>
-
-
 <!--==================================================-->
 <!-- Start testimonial-area -->
 <!--==================================================-->
@@ -661,4 +438,8 @@
         </div>
     </div>
 </div>
+
+<!--==================================================-->
+<!-- end testimonial-area -->
+<!--==================================================-->
 @endsection
