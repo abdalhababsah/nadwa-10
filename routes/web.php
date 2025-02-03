@@ -19,6 +19,9 @@ Route::post('/contact/send', [ContactUsController::class, 'send'])->name('contac
 // Services Page Route
 Route::get('/services', [HomeService::class, 'index'])->name('services');
 
+// projects Page Route
+Route::get('/projects', [HomeService::class, 'index'])->name('projects');
+
 //latest work view page
 Route::get('/latest-works/{id}', [LatestWorkView::class, 'view']); 
         

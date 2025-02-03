@@ -15,7 +15,8 @@
                 <nav class="hendre_menu">
                     <ul class="nav_scroll">
                         <li><a href="{{route('home')}}">Home </a></li>
-                        <li><a href="{{route('services')}}">Services</a></li>
+                        <!-- <li><a href="{{route('services')}}">Services</a></li> -->
+                        <li><a href="{{route('projects')}}">Projects</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
                     </ul>
                 </nav>
@@ -37,8 +38,8 @@
         <nav class="hendre_menu">
             <ul class="nav_scroll">
                 <li><a href="{{route('home')}}">Home </a></li>
-                <li><a href="{{route('services')}}">Services</a>
-                </li>
+                <li><a href="{{route('services')}}">Services</a></li>
+                <li><a href="{{route('projects')}}">Projects</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
             </ul>
         </nav>
@@ -89,7 +90,7 @@
                                 <li><i class="bi bi-envelope"></i> Amman, Jordan</li>
                                 <li><i class="bi bi-envelope"></i>(+962) 797550065</li>
                                 <li><i class="bi bi-envelope"></i>archnadia@hotmail.com</li>
-                                <li><i class="bi bi-envelope"></i>Week Days: 08.30 to 18.00 Friday & Saturday: Closed</li>
+                                <li><i class="bi bi-envelope"></i>Saturday-: 08.30 to 18.00 Friday & : Closed</li>
                             </ul>
                         </div>
                         <!-- Social Box -->

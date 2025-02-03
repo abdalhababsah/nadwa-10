@@ -736,18 +736,6 @@
     });
 
 
-
-    //curseer animation
-
-        var curser = document.querySelector(".curser");
-        var curser2 = document.querySelector(".curser2");
-    
-        document.addEventListener("mousemove", function(e){
-            curser.style.cssText = curser2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px;";
-        });
-    
-
-
      /*  Cart Plus Minus Button
     /*----------------------------------------*/
     

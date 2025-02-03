@@ -12222,40 +12222,6 @@ button.btns:hover::before{
 
 
 
-/*curser point */
-
-.curser {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #d8ab7a;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: .1s;
-}
-
-.curser2 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 10px;
-    height: 10px;
-    background: #d8ab7a;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    transition: .15s;
-    animation: Ripple 1.6s ease-in-out infinite;
-    -webkit-animation: Ripple 1.6s ease-in-out infinite;
-    -moz-animation: Ripple 1.6s ease-in-out infinite;
-}
-
-
 
 
 /*<!-- ============================================================== -->
