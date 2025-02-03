@@ -85,9 +85,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
                     const errorElement = document.getElementById(`${field}_error`);
                     if (errorElement) {
                         errorElement.style.display = 'inline';
-                        errorElement.textContent = error.errors[field][0];
-                        console.log(errorElement);
-                        
+                        errorElement.textContent = error.errors[field][0];                        
                     }
                 });
             }

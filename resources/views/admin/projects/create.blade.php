@@ -38,19 +38,22 @@
                                     <option value="{{$category->value}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
+                                <div id="category_error" class="text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title</label>
                                 <input type="text" class="form-control" id="title" name="title" required>
+                                <div id="title_error" class="text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
                                 <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                                <div id="description_error" class="text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="image" class="form-label">Image</label>
-                                <input type="file" class="form-control" id="image" name="image" accept="image/*"
-                                    required>
+                                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                                <div id="image_path_error" class="text-danger"></div>
                             </div>
                         </div>
 

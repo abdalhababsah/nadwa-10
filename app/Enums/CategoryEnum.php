@@ -6,6 +6,6 @@ enum CategoryEnum :string
 {
     case Interior = 'interior';
     case Residential = 'residential';
-    case Commercial  = 'commercial ';
-    case Landscape   = 'landscape  ';
+    case Commercial  = 'commercial';
+    case Landscape   = 'landscape';
 }
