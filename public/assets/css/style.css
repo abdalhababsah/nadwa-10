@@ -12304,7 +12304,11 @@ a .thirtysix-icon{
     color: #f07b22;
 }
 
-
-
+.right-mid-fixed{
+    position: fixed;
+    right: 0;
+    top: 40vh;
+    z-index: 2;
+}
 
 
