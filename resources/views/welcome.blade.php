@@ -1,91 +1,20 @@
 @extends('layout.mainlayout')
 @section('content')
-<div class="hero-slides owl-carousel">
-    <div class="slider-area one upper d-flex align-items-center">
-        <div class="container-fluid">
-            <div class="row bor-der align-items-center">
-                <div class="col-lg-6">
-                    <div class="single-slider-left" data-animation="fadeInUp" data-delay="100ms">
-                        <div class="single-slider">
-                            <div class="slider-content">
-                                <div class="slider-title">
-                                    <h4>BUILDING IN AMMAN, JORDAN
-                                        <h1>Build Your <span>Vision</span> <br> Creating Reality <br> New Design</h1>
-                                </div>
-                            </div>
-                            <div class="slider-number">
-                                <h1>01</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="singles-sliders" data-animation="fadeInDown" data-delay="100ms">
-                        <div class="slider-content">
-                            <div class="slider-thumb">
-                                <img style="object-fit: cover" src="{{ asset('assets/images/slider/living4.jpg') }}"
-                                    height="765px" width="802px" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="slider-icon-box">
-                <div class="slider-icon-list" data-animation="fadeInLeft" data-delay="100ms">
-                    <h5>FOLLOW US</h5>
-                    <ul>
-                        <li><a href="#"> <i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"> <i class="fab fa-insta"> </i> </a></li>
-
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div class="hero-slides owl-carousel owl-loaded owl-drag">
+    <div class="slider-area one left-sidebar "
+    style="background-image:url({{url("/assets/images/slider/1.jpeg")}});">
     </div>
-    <div class="slider-area one upper d-flex align-items-center">
-        <div class="container-fluid">
-            <div class="row bor-der align-items-center">
-                <div class="col-lg-6">
-                    <div class="single-slider-left" data-animation="fadeInUp" data-delay="100ms">
-                        <div class="single-slider">
-                            <div class="slider-content">
-                                <div class="slider-title">
-                                    <h4>BUILDING IN AMMAN, JORDAN
-
-                                    </h4>
-                                    <h1>Build Your <span>Vision</span> <br> Creating Reality <br> New Design</h1>
-                                </div>
-                            </div>
-                            <div class="slider-number">
-                                <h1>02</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="singles-sliders" data-animation="fadeInDown" data-delay="100ms">
-                        <div class="slider-content">
-                            <div class="slider-thumb">
-                                <img style="object-fit: cover" src="{{ asset('assets/images/slider/3.jpg') }}"
-                                    height="765px" width="802px" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="slider-icon-box">
-                <div class="slider-icon-list" data-animation="fadeInLeft" data-delay="100ms">
-                    <h5>FOLLOW US</h5>
-                    <ul>
-                        <li><a href="#"> <i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"> <i class="fab fa-twitter"> </i> </a></li>
-                        <li><a href="#"> <i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="slider-area one left-sidebar "
+    style="background-image:url({{url("/assets/images/slider/2.jpeg")}});">
+    </div>
+    <div class="slider-area one left-sidebar"
+    style="background-image:url({{url("/assets/images/slider/3.jpeg")}});">
+    </div>
+    <div class="slider-area one left-sidebar"
+    style="background-image:url({{url("/assets/images/slider/4.jpeg")}});">
+    </div>
+    <div class="slider-area one left-sidebar"
+    style="background-image:url({{url("/assets/images/slider/5.jpeg")}});">
     </div>
 </div>
 

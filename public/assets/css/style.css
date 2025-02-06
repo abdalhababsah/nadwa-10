@@ -1937,11 +1937,11 @@ ul.social-box li a:hover {
 
 .slider-area.one.left-sidebar {
     padding: 0px 0 0px;
-    background: url(../images/slider/home-left-bg.jpg);
+    /* background: url(../images/slider/slide-1.jpg); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 920px;
+    height: 500px;
 }
 
 .slider-area.one.left-sidebar .slider-content {

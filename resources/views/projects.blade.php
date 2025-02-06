@@ -36,7 +36,7 @@
             <div class="col-lg-4 col-md-6 grid-item {{$project->category}}">
                 <div class="case-study-single-box wow fadeInUp animated">
                     <div class="case-study-thumb2">
-                        <img src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
+                        <img loading="lazy" src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
                     </div>
                     <div class="case-study-contents">
                         <div class="case-text">

@@ -32,12 +32,12 @@
     </div>
 </div>
 <!-- Fixed Social Aside -->
-<div class="right-mid-fixed">
+<!-- <div class="right-mid-fixed">
     <ul class="social-box">
         <li class="d-block"><a href="https://www.instagram.com/alnadwa.architecture/"> <i class="fab fa-instagram"></i></a></li>
         <li class="d-block"><a href="https://www.facebook.com/Al.NadwaArchitects/"> <i class="fab fa-facebook-f"></i></a></li>
     </ul>
-</div>
+</div> -->
 <!--  Mobile Menu Area -->
 <div class="mobile-menu-area sticky d-sm-block d-md-block d-lg-none ">
     <div class="mobile-menu">
