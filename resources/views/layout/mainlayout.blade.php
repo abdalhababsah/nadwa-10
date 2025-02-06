@@ -89,12 +89,31 @@
 
 <body>
 
+
+    <!-- loder -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <div class="loder-section left-section"></div>
+        <div class="loder-section right-section"></div>
+    </div>
+
+
     @include('layout.header')
 
     @yield('content')
 
     @include('layout.footer')
 
+    <div class="search-popup">
+        <button class="close-search style-two"><i class="fa fa-times"></i></button>
+        <button class="close-search"><i class="fas fa-arrow-up"></i></button>
+        <form method="post" action="#">
+            <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search Here" required="">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </form>
+    </div>
     <!--==================================================-->
     <!-- Start scrollup section Area -->
     <!--==================================================-->
