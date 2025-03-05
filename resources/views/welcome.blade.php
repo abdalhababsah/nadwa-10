@@ -2,16 +2,19 @@
 @section('content')
 <div class="hero-slides owl-carousel owl-loaded owl-drag">
     <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/1-new.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/6.jpg")}});">
     </div>
     <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/2-new.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/2.jpg")}});">
     </div>
     <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/3-new.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/3.jpg")}});">
     </div>
     <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/4-new.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/4.jpg")}});">
+    </div>
+    <div class="slider-area one left-sidebar"
+    style="background-image:url({{url("/assets/images/slider/5.jpg")}});">
     </div>
 </div>
 
