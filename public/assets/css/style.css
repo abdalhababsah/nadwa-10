@@ -7,7 +7,7 @@ Version: 1.0.0
 Text Domain: Arcke
 Tags:       architect, architecture, architecture design, architecture portfolio, architecture studio, clean, furniture store, gallery, interior decoration, interior design, interior design portfolio, interior designer, modern, property
 ================================================*/
-    
+
 /*TABLE OF CONTENTS*/
 /*=====================
 01. Arcke top-menu-area Css
@@ -1941,7 +1941,7 @@ ul.social-box li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 500px;
+    aspect-ratio: 5/4;
 }
 
 .slider-area.one.left-sidebar .slider-content {
@@ -2833,7 +2833,7 @@ span.fill {
 .process-area-seven .single-process-box:hover .single-process-number h4{
     color: #fff;
     background: #101010;
-} 
+}
 
 /** Style Three**/
 
@@ -3657,7 +3657,7 @@ span.fill {
 
 .counter-area.one .counter-single-item-inner:hover .counter-text h4::before{
     width: 20%;
-} 
+}
 
 .counter-area.one.upper {
     background: #fff;
@@ -4746,11 +4746,11 @@ span.fill {
 
 .pricing-area .single-pricing-box.style_two .pricing-button-shap{
     display: inline-block;
-} 
+}
 
 .pricing-area .single-pricing-box.style_two .single-pricing-content::before{
     height: 100%;
-} 
+}
 
 .pricing-area .single-pricing-box .single-pricing-thumb img {
     width: 100%;
@@ -4883,7 +4883,7 @@ span.fill {
     width: 100%;
     opacity: 1;
     left: 0;
-} 
+}
 
 .pricing-area .single-pricing-box:hover .pricing-button a{
     color: #fff;
@@ -4907,11 +4907,11 @@ span.fill {
 
 .pricing-area .single-pricing-box:hover .pricing-button-shap{
     display: inline-block;
-} 
+}
 
 .pricing-area .single-pricing-box:hover .single-pricing-content::before{
     height: 100%;
-} 
+}
 
 .pricing-area.upper .single-pricing-box.style_two::before {
     background: inherit;
@@ -5483,7 +5483,7 @@ span.fill {
     opacity: 0;
     transition: .5s;
     transform: scale(0);
-} 
+}
 
 .project_area_five.upper .single_project_button a {
     display: inline-block;
@@ -6213,7 +6213,7 @@ span.fill {
 
 .team-area-inner-page .single-team-inner-box:hover .single-team-inner-thumb::before{
     height: 100%;
-} 
+}
 
 .team-area-inner-page .single-team-inner-box .team-inner-icon-list ul li a:hover{
     background: #D7AB79;
@@ -6360,7 +6360,7 @@ span.fill {
 }
 
 .team-area-seven .team-button a:hover::before{
-   transform: scale(1); 
+   transform: scale(1);
 }
 
 /*<!-- ============================================================== -->
@@ -8890,7 +8890,7 @@ input.src-input-box::placeholder {
 .portfolio_nav ul li.current_menu_item {
     color: #D7AB79;
     background: transparent;
-    
+
 }
 
 .portfolio-minimal-area .case-study-single-box {
@@ -8950,11 +8950,11 @@ input.src-input-box::placeholder {
 
 .portfolio-minimal-area .case-study-title.style2 h3 a:hover{
     color: #D7AB79;
-} 
+}
 
 .portfolio-minimal-area .case-title.style2 span a:hover{
     color: #fff;
-} 
+}
 
 .portfolio-minimal-area .case-study-icon i:hover{
     background: #fff;
@@ -9086,7 +9086,7 @@ input.src-input-box::placeholder {
 .portfolio_nav ul li.current_menu_item {
     color: #D7AB79;
     background: transparent;
-    
+
 }
 
 .portfolio-showcase-area .case-study-single-box {
@@ -9612,7 +9612,7 @@ input.src-input-box::placeholder {
 
 .brand-area.seven .single-brand {
     text-align: center;
-    transition: .5s;  
+    transition: .5s;
 }
 
 .brand-area.seven .single-brand .brand-thumb {
@@ -10804,7 +10804,7 @@ button.btns::before {
 }
 
 button.btns:hover{
-   border: 1px solid #D9AB7A; 
+   border: 1px solid #D9AB7A;
 }
 
 button.btns:hover::before{
@@ -11417,7 +11417,7 @@ button.btns:hover::before{
   .prgoress_indicator:hover ::after {
     color: var(--primary-color-one);
   }
-  
+
   .prgoress_indicator:hover ::before {
     opacity: 1;
   }
@@ -11806,7 +11806,7 @@ button.btns:hover::before{
     }
 }
 
-/*** 
+/***
 ====================================================================
   Search Popup
 ====================================================================
@@ -11986,7 +11986,7 @@ button.btns:hover::before{
 
 .search-popup .form-group{
   position:relative;
-  margin:0px; 
+  margin:0px;
   overflow: hidden;
 }
 .search-popup .close-search.style-two{
@@ -12289,7 +12289,7 @@ button.btns:hover::before{
 
 .copyright-area.upper .copyright-icon-list ul li a:hover{
    color: #fff;
-    background: #D7AB79; 
+    background: #D7AB79;
 }
 
 a .thirtysix-icon{

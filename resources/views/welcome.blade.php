@@ -2,19 +2,16 @@
 @section('content')
 <div class="hero-slides owl-carousel owl-loaded owl-drag">
     <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/1.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/1-new.jpeg")}});">
     </div>
     <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/2.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/2-new.jpeg")}});">
     </div>
     <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/3.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/3-new.jpeg")}});">
     </div>
     <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/4.jpeg")}});">
-    </div>
-    <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/5.jpeg")}});">
+    style="background-image:url({{url("/assets/images/slider/4-new.jpeg")}});">
     </div>
 </div>
 
@@ -172,10 +169,10 @@
                                     <div class="tab-title">
                                         <h3>Design Make Dream</h3>
                                         <p>
-                                            Architectural and interior design consulting office. 
+                                            Architectural and interior design consulting office.
                                         </p>
                                         <p>
-                                            Was founded in 1992 by architect Nadia al-Hakim. 
+                                            Was founded in 1992 by architect Nadia al-Hakim.
                                         </p>
                                     </div>
 
