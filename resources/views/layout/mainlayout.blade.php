@@ -63,6 +63,7 @@
         "sameAs": [
             "https://www.instagram.com/alnadwa.architecture/",
             "https://www.facebook.com/Al.NadwaArchitects/"
+            "https://www.facebook.com/people/Alnadwa-architecture/61566978998926/",
         ]
     }
     </script>

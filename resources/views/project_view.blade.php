@@ -4,7 +4,7 @@
 	<!-- Start breadcumb-area -->
 	<!--==================================================-->
 
-	<div class="breadcumb-area d-flex align-items-center">
+	<div class="breadcumb-area d-flex align-items-center" style="background-image: url({{ asset('storage/' . $work->image_path) }})">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -74,7 +74,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!--==================================================-->
 	<!-- End service-details-area -->
 	<!--==================================================-->

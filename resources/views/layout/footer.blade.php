@@ -1,5 +1,5 @@
 
-<div class="footer-section upper"> 
+<div class="footer-section upper">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
@@ -16,7 +16,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>					
+                </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="widgets-company-info-box wow fadeInUp">
@@ -30,11 +30,11 @@
                     </div>
                     <div class="footer-icon-list">
                         <ul>
-                            <li><a href="https://www.facebook.com/Al.NadwaArchitects/"> <i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=61566978998926" target="_blank"> <i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://www.instagram.com/alnadwa.architecture/"> <i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
-                </div>					
+                </div>
             </div>
 
         </div>
@@ -52,4 +52,4 @@
             </div>
         </div>
     </div>
-</div>	
+</div>

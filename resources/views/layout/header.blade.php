@@ -35,7 +35,7 @@
 <div class="right-mid-fixed">
     <ul class="social-box">
         <li class="d-block mb-1"><a href="https://www.instagram.com/alnadwa.architecture/"> <i class="fab fa-instagram"></i></a></li>
-        <li class="d-block"><a href="https://www.facebook.com/Al.NadwaArchitects/"> <i class="fab fa-facebook-f"></i></a></li>
+        <li class="d-block"><a href="https://www.facebook.com/profile.php?id=61566978998926" target="_blank"> <i class="fab fa-facebook-f"></i></a></li>
     </ul>
 </div>
 <!--  Mobile Menu Area -->
@@ -100,14 +100,14 @@
                         </div>
                         <!-- Social Box -->
                         <ul class="social-box">
-                            <li class="facebook"><a href="https://www.facebook.com/Al.NadwaArchitects/" class="fab fa-facebook-f"></a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/profile.php?id=61566978998926" target="_blank" class="fab fa-facebook-f"></a></li>
                             <li class="instagram"><a href="https://www.instagram.com/alnadwa.architecture/" class="fab fa-instagram"></a></li>
                             <!-- <li class="twitter"><a href="#" class="fab fa-twitter"></a></li>
                             <li class=""><a href="#" class="fab fa-pinterest-p"></a></li>
                             <li class="linkedin"><a href="#" class="fab fa-linkedin-in"></a></li> -->
                         </ul>
                     </div>
-                </div>		
+                </div>
             </div>
         </div>
     </div>
