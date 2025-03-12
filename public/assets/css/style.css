@@ -4466,7 +4466,7 @@ span.fill {
 
 .service-details-area {
     padding: 120px 0 110px;
-    background: #161616;
+    background: #fff;
 }
 
 .service-details-area .service-details-thumb img {
@@ -4536,7 +4536,11 @@ span.fill {
     line-height: 30px;
     color: #999999;
     font-weight: 400;
-    margin: 90px 0 0;
+    /* margin: 90px 0 0; */
+}
+.service-details-area .service-details-description h3 {
+    color: #999999;
+    font-weight: 600;
 }
 
 

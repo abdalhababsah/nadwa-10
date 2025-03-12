@@ -32,13 +32,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="owl-carousel details_list">
-					<div class="col-lg-12">
+					{{-- <div class="col-lg-12">
 						<div class="service-details-box">
 							<div class="service-details-thumb">
 								<img src="{{ asset('storage/' . $work->image_path) }}" alt="main image">
 							</div>
 						</div>
-					</div>
+					</div> --}}
 					@isset($work->images)
 					@foreach ($work->images as $image)
 					<div class="col-lg-12">
@@ -61,13 +61,14 @@
 						</div>
 						<div class="service-steps-list">
 							<h3>Category</h3>
-							<p>{{$work->category->name}}</p>
+							<p class="text-light-emphasis">{{$work->category->name}}</p>
 						</div>
 					</div>
 				</div>
-				<div class="service-details-description">
+                <hr>
+				<div class="service-details-description text-dark">
+                    <h3>More Information</h3>
 					<p>
-						<h3>More Information</h3>
 						{!! nl2br($work->description) ?? '-'!!}
 					</p>
 				</div>
