@@ -32,13 +32,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="owl-carousel details_list">
-					{{-- <div class="col-lg-12">
-						<div class="service-details-box">
-							<div class="service-details-thumb">
-								<img src="{{ asset('storage/' . $work->image_path) }}" alt="main image">
-							</div>
-						</div>
-					</div> --}}
 					@isset($work->images)
 					@foreach ($work->images as $image)
 					<div class="col-lg-12">

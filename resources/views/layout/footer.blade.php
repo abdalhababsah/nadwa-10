@@ -22,7 +22,7 @@
                 <div class="widgets-company-info-box wow fadeInUp">
                     <div class="elaction-logo">
                         <a class="logo_thumb" href="index.html" title="elaction">
-                            <img src="{{asset('assets/images/Artboard1.png')}}" height="80px" alt="images">
+                            <img src="{{asset('assets/images/logo.webp')}}" width="180" height="80px" alt="images">
                         </a>
                     </div>
                     <div class="company-info-desc">

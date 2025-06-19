@@ -454,7 +454,7 @@
                 items: 1
             },
             1920: {
-                items: 5
+                items: 1
             }
         }
     })
@@ -508,18 +508,24 @@
         if ($.fn.isotope) {
 
             var $portfolio = $('.image_load');
+            // Apply filter from the first category on page load
+            var $firstFilter = $('.menu-filtering li').first();
+            var initialSelector = $firstFilter.attr('data-filter');
+
+            $firstFilter.addClass('current_menu_item');
+
 
             $portfolio.isotope({
 
                 itemSelector: '.grid-item',
 
-                filter: '*',
+                filter: initialSelector,
 
                 resizesContainer: true,
 
                 layoutMode: 'masonry',
 
-                transitionDuration: '0.8s'
+                transitionDuration: '0.6s'
 
             });
             $('.menu-filtering li').on('click', function () {

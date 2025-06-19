@@ -1,21 +1,21 @@
 @extends('layout.mainlayout')
 @section('content')
-<div class="hero-slides owl-carousel owl-loaded owl-drag">
-    <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/6.jpg")}});">
-    </div>
-    <div class="slider-area one left-sidebar "
-    style="background-image:url({{url("/assets/images/slider/2.jpg")}});">
-    </div>
-    <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/3.jpg")}});">
-    </div>
-    <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/4.jpg")}});">
-    </div>
-    <div class="slider-area one left-sidebar"
-    style="background-image:url({{url("/assets/images/slider/5.jpg")}});">
-    </div>
+<div class="hero-slides owl-carousel owl-loaded owl-drag" loading="lazy">
+    @php
+        $slides = [
+            '6.webp',
+            '2.webp',
+            '3.webp',
+            '4.webp',
+            '5.webp',
+        ];
+    @endphp
+    @foreach($slides as $slide)
+        <div class="slider-area one left-sidebar"
+            style="background-image:url({{ asset("assets/images/slider/$slide") }});">
+            <img src="{{ asset("assets/images/slider/$slide") }}" alt="Slide" loading="lazy" style="display:none;">
+        </div>
+    @endforeach
 </div>
 
 <!--==================================================-->
@@ -137,7 +137,7 @@
             <div class="col-lg-6">
                 <div class="single-about-left wow fadeInLeft">
                     <div class="about-thumb">
-                        <img src="{{asset('assets/images/1.png')}}" style="object-fit:contain; " alt="">
+                        <img src="{{asset('assets/images/story.webp')}}" width="800" height="600" class="img-fluid" alt="interior shot" loading="lazy">
                     </div>
 
                 </div>

@@ -5,7 +5,7 @@
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href=""
             target="_blank">
-            <img src="{{asset('assets/images/Artboard1.png')}}" class="navbar-brand-img "
+            <img src="{{asset('assets/images/logo.webp')}}" width="99" height="44" class="navbar-brand-img "
                 alt="main_logo">
 
         </a>

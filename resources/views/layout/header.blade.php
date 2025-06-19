@@ -4,10 +4,10 @@
             <div class="col-lg-2">
                 <div class="logo">
                     <a class="logo_img" href="index.html" title="hendre">
-                        <img src="{{asset('assets/images/Artboard1.png')}}" alt="logo" height="60px">
+                        <img src="{{asset('assets/images/logo.webp')}}" alt="logo" width="134" height="60px">
                     </a>
                     <a class="main_sticky" href="index.html" title="hendre">
-                        <img src="{{asset('assets/images/Artboard1.png')}}" alt="logo" height="60px">
+                        <img src="{{asset('assets/images/logo.webp')}}" alt="logo" width="134" height="60px">
                     </a>
                 </div>
             </div>
@@ -65,27 +65,27 @@
                 <div class="sidebar-info-contents">
                     <div class="content-inner">
                         <div class="nav-logo">
-                            <a href="{{route('home')}}"><img src="{{asset('/assets/images/Artboard1.png')}}" alt="sid img" ></a>
+                            <a href="{{route('home')}}"><img src="{{asset('/assets/images/logo.webp')}}" alt="sid img" width="180" height="80" class="img-fluid"></a>
                         </div>
                         <div class="row padding-two">
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-5.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-5-sm.png')}}" class="img-fluid" width="300" height="300" alt="mini kitchen" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-9.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-9-sm.png')}}" class="img-fluid" width="300" height="300" alt="villa interface" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-2.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-2-sm.png')}}" class="img-fluid" width="300" height="300" alt="waredrop" loading="lazy">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="content-thumb-box">
-                                    <img src="{{asset('assets/images/resource/insta-7.png')}}" alt="">
+                                    <img src="{{asset('assets/images/resource/insta-7-sm.png')}}" class="img-fluid" width="300" height="300" alt="living room" loading="lazy">
                                 </div>
                             </div>
                         </div>
