@@ -40,7 +40,7 @@
                                     @foreach ($projects as $work)
                                         <tr>
                                             <td>{{ $work->id }}</td>
-                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}">{{ $work->order }}</td>
+                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}" oninput="this.innerText = this.innerText.replace(/[^0-9]/g, '')">{{ $work->order }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
@@ -72,37 +72,6 @@
         </div>
 @endsection
 
-                        @push('scripts')
-                        <script>
-                            function updateOrder() {
-                                let orders = [];
-                                document.querySelectorAll('.order-edit').forEach(function(td) {
-                                    orders.push({
-                                        id: parseInt(td.getAttribute('data-id')),
-                                        order: parseInt(td.innerText.trim())
-                                    });
-                                });
-                                console.log(orders);
-
-                                fetch("{{ route('admin.projects.updateOrder') }}", {
-                                    method: "PUT",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
-                                    },
-                                    body: JSON.stringify({orders: orders})
-                                })
-                                .then(response => response.json())
-                                .then(data => {
-                                    console.log(data);
-                                    if (data.success) {
-                                        alert('Order updated successfully!');
-                                        location.reload();
-                                    } else {
-                                        alert('Failed to update order.');
-                                    }
-                                })
-                                .catch(() => alert('Error updating order.'));
-                            }
-                        </script>
-                        @endpush
+@push('scripts')
+<script src="{{url('backend\assets\js\update-order.js')}}"></script>
+@endpush
