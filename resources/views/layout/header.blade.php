@@ -3,10 +3,10 @@
         <div class="row align-items-center">
             <div class="col-lg-2">
                 <div class="logo">
-                    <a class="logo_img" href="index.html" title="hendre">
+                    <a class="logo_img" href="{{url('/')}}" title="hendre">
                         <img src="{{asset('assets/images/logo.webp')}}" alt="logo" width="134" height="60px">
                     </a>
-                    <a class="main_sticky" href="index.html" title="hendre">
+                    <a class="main_sticky" href="{{url('/')}}" title="hendre">
                         <img src="{{asset('assets/images/logo.webp')}}" alt="logo" width="134" height="60px">
                     </a>
                 </div>
