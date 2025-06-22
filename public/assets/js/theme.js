@@ -501,50 +501,38 @@
         delay: 10,
         time: 1000
     });
-
     /* Portfolio Isotope  */
-    $('.image_load').imagesLoaded(function () {
+    if ($.fn.isotope) {
+        var $portfolio = $('.image_load');
+        // Apply filter from the first category on page load
+        var $firstFilter = $('.menu-filtering li').first();
+        var initialSelector = $firstFilter.attr('data-filter');
 
-        if ($.fn.isotope) {
+        $firstFilter.addClass('current_menu_item');
 
-            var $portfolio = $('.image_load');
-            // Apply filter from the first category on page load
-            var $firstFilter = $('.menu-filtering li').first();
-            var initialSelector = $firstFilter.attr('data-filter');
+        $portfolio.isotope({
+            itemSelector: '.grid-item',
+            filter: initialSelector,
+            resizesContainer: true,
+            layoutMode: 'masonry',
+            transitionDuration: '0.6s'
+        });
 
-            $firstFilter.addClass('current_menu_item');
-
+        $('.menu-filtering li').on('click', function () {
+            $('.menu-filtering li').removeClass('current_menu_item');
+            $(this).addClass('current_menu_item');
+            var selector = $(this).attr('data-filter');
             $portfolio.isotope({
-
-                itemSelector: '.grid-item',
-
-                filter: initialSelector,
-
-                resizesContainer: true,
-
-                layoutMode: 'masonry',
-
-                transitionDuration: '0.6s'
-
+                filter: selector,
             });
-            $('.menu-filtering li').on('click', function () {
+        });
+    }
 
-                $('.menu-filtering li').removeClass('current_menu_item');
-
-                $(this).addClass('current_menu_item');
-
-                var selector = $(this).attr('data-filter');
-
-                $portfolio.isotope({
-
-                    filter: selector,
-
-                });
-
-            });
-
-        };
-
+    // Wait for images to load and then layout Isotope
+    $('.image_load').imagesLoaded(function () {
+        if ($.fn.isotope) {
+            $portfolio.isotope('layout');
+        }
     });
 
     // Venubox
