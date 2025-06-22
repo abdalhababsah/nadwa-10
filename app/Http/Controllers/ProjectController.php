@@ -49,7 +49,7 @@ class ProjectController extends Controller
         if (file_exists($originalPath)) {
             // Resize the image to fit within maxWidth and maxHeight
             $img = Image::read($originalPath)
-            ->scaleDown(height: 550)->crop(width: $maxWidth, height: 450, position: 'center');
+            ->scaleDown(height: 550)->crop(width: $maxWidth, height: 400, position: 'center');
 
             // Ensure the directory exists
             if (!file_exists(dirname($thumbPath))) {
