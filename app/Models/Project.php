@@ -11,7 +11,7 @@ class Project extends Model
     use HasFactory;
 
     // Mass assignable attributes
-    protected $fillable = ['category', 'title', 'description', 'image_path'];
+    protected $fillable = ['category', 'title', 'description', 'image_path', 'order'];
 
     protected $casts = [
         'category' => CategoryEnum::class,

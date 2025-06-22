@@ -38,9 +38,10 @@ Route::prefix('admin')->group(function () {
         
         Route::get('/projects', [ProjectController::class, 'index'])->name('admin.projects.index'); // List latest works
         Route::get('/projects/create', [ProjectController::class, 'create'])->name('admin.projects.create'); // Show create form
-        Route::post('/projects', [ProjectController::class, 'store'])->name('admin.projects.store'); // Store latest work
-        Route::get('/projects/{id}', [ProjectController::class, 'edit'])->name('admin.projects.edit'); // Update latest work
-        Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('admin.projects.update'); // Update latest work
+        Route::post('/projects', [ProjectController::class, 'store'])->name('admin.projects.store');
+        Route::put('/projects/order', [ProjectController::class, 'updateOrder'])->name('admin.projects.updateOrder');
+        Route::get('/projects/{id}', [ProjectController::class, 'edit'])->name('admin.projects.edit'); 
+        Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('admin.projects.update'); 
         Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('admin.projects.destroy'); // Delete latest work
 
         Route::get('/testemonials', [TestemonialController::class, 'index'])->name('admin.testemonials.index');

@@ -12,7 +12,9 @@ class ProjectController extends Controller
     public function index()
     {
         try {
-        $projects = Project::latest()->get();
+        $projects = Project::orderBy('order')
+            ->latest('created_at')
+            ->get();
         $categories = CategoryEnum::cases();
 
         return view('projects', compact('projects', 'categories'));

@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Enums\CategoryEnum;
 use App\Http\Controllers\Controller;
+use App\Models\Project;
 use App\Models\ProjectImage;
 use Illuminate\Http\Request;
-
-use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Str;
@@ -146,6 +145,25 @@ class ProjectController extends Controller
         return response()->json(['success' => 'Project updated successfully.']);
     }
 
+    /**
+     * Update the order of Projects.
+     */
+    public function updateOrder(Request $request)
+    {
+        // return response()->json(['success' => 'Method not implemented.'], 200);
+        $validated = $request->validate([
+            'orders' => 'required|array',
+            'orders.*.id' => 'integer|exists:projects,id',
+            'orders.*.order' => 'integer|min:0',
+        ]);
+
+        // Update the order of each Project
+        foreach ($validated['orders'] as $order) {
+            Project::where('id', $order['id'])->update(['order' => $order['order']]);
+        }
+
+        return response()->json(['success' => 'Project order updated successfully.']);
+    }
     /**
      * Remove the specified Project from storage.
      */

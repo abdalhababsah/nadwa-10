@@ -7,8 +7,11 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
                         <h6>Projects Table</h6>
-                        <a class="btn btn-primary" href="{{url('admin/projects/create')}}">
-                           Add Project</a>
+                        <div>
+                            <a class="btn btn-primary" href="{{url('admin/projects/create')}}">
+                               Add Project</a>
+                            <button class="btn btn-warning" onclick="updateOrder()">Update Order</button>
+                        </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -25,6 +28,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Order</th>
                                         <th>Image</th>
                                         <th>Category</th>
                                         <th>Title</th>
@@ -36,6 +40,7 @@
                                     @foreach ($projects as $work)
                                         <tr>
                                             <td>{{ $work->id }}</td>
+                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}">{{ $work->order }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
@@ -65,5 +70,39 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
+
+                        @push('scripts')
+                        <script>
+                            function updateOrder() {
+                                let orders = [];
+                                document.querySelectorAll('.order-edit').forEach(function(td) {
+                                    orders.push({
+                                        id: parseInt(td.getAttribute('data-id')),
+                                        order: parseInt(td.innerText.trim())
+                                    });
+                                });
+                                console.log(orders);
+
+                                fetch("{{ route('admin.projects.updateOrder') }}", {
+                                    method: "PUT",
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                        "X-CSRF-TOKEN": "{{ csrf_token() }}"
+                                    },
+                                    body: JSON.stringify({orders: orders})
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log(data);
+                                    if (data.success) {
+                                        alert('Order updated successfully!');
+                                        location.reload();
+                                    } else {
+                                        alert('Failed to update order.');
+                                    }
+                                })
+                                .catch(() => alert('Error updating order.'));
+                            }
+                        </script>
+                        @endpush
