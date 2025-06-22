@@ -514,7 +514,6 @@
 
             $firstFilter.addClass('current_menu_item');
 
-
             $portfolio.isotope({
 
                 itemSelector: '.grid-item',

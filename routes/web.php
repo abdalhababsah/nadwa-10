@@ -5,9 +5,7 @@ use App\Http\Controllers\Admin\TestemonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
-// use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\ProjectController as LatestWorkView;
-// use App\Http\Controllers\ServiceController as HomeService;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
@@ -16,14 +14,13 @@ use App\Http\Controllers\ContactUsController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [ContactUsController::class, 'index'])->name('contact');
 Route::post('/contact/send', [ContactUsController::class, 'send'])->name('contact.send');
-// Services Page Route
-// Route::get('/services', [HomeService::class, 'index'])->name('services');
 
 // projects Page Route
 Route::get('/projects', [LatestWorkView::class, 'index'])->name('projects');
 
 //latest work view page
 Route::get('/projects/{id}', [LatestWorkView::class, 'view']); 
+Route::get('/storage/resized-projects/{filename}', [LatestWorkView::class, 'showResizedCover']);
         
 // Admin Authentication Routes
 Route::prefix('admin')->group(function () {
@@ -39,12 +36,6 @@ Route::prefix('admin')->group(function () {
     // Protected Routes (e.g., Dashboard)
     Route::middleware(['auth'])->group(function () {
         
-        // Route::get('/services', [ServiceController::class, 'index'])->name('admin.services.index'); // List services
-        // Route::get('/services/create', [ServiceController::class, 'create'])->name('admin.services.create'); // Show create form
-        // Route::post('/services', [ServiceController::class, 'store'])->name('admin.services.store'); // Store service
-        // Route::put('/services/{id}', [ServiceController::class, 'update'])->name('admin.services.update'); // Update service
-        // Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('admin.services.destroy'); // Delete service
-
         Route::get('/projects', [ProjectController::class, 'index'])->name('admin.projects.index'); // List latest works
         Route::get('/projects/create', [ProjectController::class, 'create'])->name('admin.projects.create'); // Show create form
         Route::post('/projects', [ProjectController::class, 'store'])->name('admin.projects.store'); // Store latest work
