@@ -44,13 +44,12 @@ class ProjectController extends Controller
         }
 
         $maxWidth = 560;
-        $maxHeight = 400;
         $originalPath = public_path("storage/projects/{$filename}");
 
         if (file_exists($originalPath)) {
             // Resize the image to fit within maxWidth and maxHeight, maintaining aspect ratio, no cropping
             $img = Image::read($originalPath)
-            ->scaleDown(height: $maxHeight);
+            ->scaleDown($maxWidth);
 
             // Ensure the directory exists
             if (!file_exists(dirname($thumbPath))) {
