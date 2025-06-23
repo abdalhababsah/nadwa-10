@@ -4,10 +4,21 @@ var mainUrl = $('meta[name=base_url]').attr("content");
 function updateOrder() {
     let orders = [];
     document.querySelectorAll('.order-edit').forEach(function(td) {
-        orders.push({
-            id: parseInt(td.getAttribute('data-id')),
-            order: parseInt(td.innerText.trim())
-        });
+        const id = parseInt(td.getAttribute('data-id'));
+        const orderValue = td.innerText.trim();
+        const order = parseInt(orderValue, 10);
+
+        if (!isNaN(id) && !isNaN(order) && /^\d+$/.test(orderValue)) {
+            orders.push({
+            id: id,
+            order: order
+            });
+        }else {
+            // If the order value is invalid, alert the user and skip this entry
+            td.classList.add('text-bg-danger');
+            alert('Invalid order value for ID: ' + id);
+            return;
+        }
     });
     
     fetch(mainUrl+"/projects/order", {

@@ -40,7 +40,7 @@
                                     @foreach ($projects as $work)
                                         <tr>
                                             <td>{{ $work->id }}</td>
-                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}" oninput="this.innerText = this.innerText.replace(/[^0-9]/g, '')">{{ $work->order }}</td>
+                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}" >{{ $work->order }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
