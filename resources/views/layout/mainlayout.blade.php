@@ -163,7 +163,7 @@
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
 
     <!-- theme js -->
-    <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script src="{{ asset('assets/js/theme-1.js') }}"></script>
 
 
 </body>
