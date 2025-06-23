@@ -51,7 +51,6 @@ Route::prefix('admin')->group(function () {
         Route::put('/testemonials/{id}', [TestemonialController::class, 'update'])->name('admin.testemonials.update');
         Route::delete('/testemonials/{id}', [TestemonialController::class, 'destroy'])->name('admin.testemonials.destroy');
         
-
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     });
