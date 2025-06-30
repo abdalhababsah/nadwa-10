@@ -9,7 +9,7 @@ use App\Models\ProjectImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
-use Str;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -18,10 +18,17 @@ class ProjectController extends Controller
      */
     public function index()
     {
+        $categories = CategoryEnum::cases();
         // Fetch Projects ordered by the newest first
-        $projects = Project::orderBy('created_at', 'desc')->paginate(10);
+        $query = Project::orderBy('order')->latest('created_at');
 
-        return view('admin.projects.index', compact('projects'));
+        if (request()->has('category') && in_array(request('category'), array_column($categories, 'value'))) {
+            $query->where('category', request('category'));
+        }
+
+        $projects = $query->paginate(10)->withQueryString();
+
+        return view('admin.projects.index', compact('projects', 'categories'));
     }
 
     /**

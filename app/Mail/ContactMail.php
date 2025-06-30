@@ -27,7 +27,13 @@ class ContactMail extends Mailable
     public function build()
     {
         return $this->subject($this->data['subject'])
-                    ->from($this->data['email'], $this->data['name'])
-                    ->view('emails.contact');
+                    ->from('info@alnadwaarchitects.com', 'Al Nadwa Architects')
+                    ->replyTo($this->data['email'], $this->data['name'])
+                    ->view('emails.contact')->with([
+                        'name' => $this->data['name'],
+                        'email' => $this->data['email'],
+                        'subject' => $this->data['subject'],
+                        'messageBody' => $this->data['message'],
+                    ]);
     }
 }

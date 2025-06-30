@@ -7,9 +7,22 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
                         <h6>Projects Table</h6>
-                        <div>
-                            <a class="btn btn-primary" href="{{url('admin/projects/create')}}">
-                               Add Project</a>
+                        <div class="d-flex align-items-center">
+                            <form method="GET" action="{{ url('admin/projects') }}" class="me-2 mb-3">
+                                <select name="category" class="form-select" onchange="this.form.submit()">
+                                    <option value="">All Categories</option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category }}" 
+                                        @selected(request('category') == $category->value)
+                                        >
+                                            {{ $category }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </form>
+                            <a class="btn btn-primary me-2" href="{{ url('admin/projects/create') }}">
+                                Add Project
+                            </a>
                             <button class="btn btn-warning" onclick="updateOrder()">Update Order</button>
                         </div>
                     </div>

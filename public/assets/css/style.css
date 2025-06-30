@@ -5718,7 +5718,7 @@ span.fill {
     border-radius: 3px;
     transition: .5s;
     border: inherit;
-    color: #fff;
+    color: #454240;
     background: white;
     margin: 0 0 20px;
     outline: inherit;
@@ -5732,7 +5732,7 @@ span.fill {
     outline: inherit;
     border: inherit;
     height: 150px;
-    color: #fff;
+    color: #454240;
     padding: 20px 20px 0;
     box-shadow: 7px 6px 43px rgba(0, 0, 0, 0.1);
 

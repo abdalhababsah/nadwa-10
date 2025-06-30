@@ -37,6 +37,14 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form_box">
+                                            <input type="text" name="subject" placeholder="What do you want to talk about?" required>
+                                            @error('subject')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form_box">
                                             <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
                                             @error('message')
                                                 <span class="text-danger">{{ $message }}</span>
