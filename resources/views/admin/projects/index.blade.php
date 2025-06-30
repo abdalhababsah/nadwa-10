@@ -54,7 +54,7 @@
                                         <tr class="tableRow" data-id="{{ $work->id }}">
                                             <td>{{ $work->id }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $work->image_path) }}"
+                                                <img src="{{ asset('storage/resized-' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
                                             </td>
                                             <td>{{ $work->category }}</td>
