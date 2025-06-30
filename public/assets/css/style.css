@@ -1,13 +1,4 @@
-
-/*===============================================
-Template Name: Arcke - Architecture & Interior Design HTML5 Template
-Author:  https://themeforest.net/user/dreamit-solution
-Description: Description
-Version: 1.0.0
-Text Domain: Arcke
-Tags:       architect, architecture, architecture design, architecture portfolio, architecture studio, clean, furniture store, gallery, interior decoration, interior design, interior design portfolio, interior designer, modern, property
-================================================*/
-
+/*==========================================
 /*TABLE OF CONTENTS*/
 /*=====================
 01. Arcke top-menu-area Css
@@ -2342,10 +2333,7 @@ ul.social-box li a:hover {
 ======================================================**/
 
 .tag-area.one {
-    background: url(../images/resource/tag-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    min-height: 266px;
     padding: 115px 0 100px;
 }
 

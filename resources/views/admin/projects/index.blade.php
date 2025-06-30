@@ -1,6 +1,8 @@
 @extends('admin.layout.mainlayout')
 
 @section('content')
+ <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
@@ -10,7 +12,7 @@
                         <div class="d-flex align-items-center">
                             <form method="GET" action="{{ url('admin/projects') }}" class="me-2 mb-3">
                                 <select name="category" class="form-select" onchange="this.form.submit()">
-                                    <option value="">All Categories</option>
+                                    <option value="">All</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category }}" 
                                         @selected(request('category') == $category->value)
@@ -23,11 +25,10 @@
                             <a class="btn btn-primary me-2" href="{{ url('admin/projects/create') }}">
                                 Add Project
                             </a>
-                            <button class="btn btn-warning" onclick="updateOrder()">Update Order</button>
                         </div>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
+                        <div class="table-responsive p-2">
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -37,11 +38,10 @@
                                     </ul>
                                 </div>
                             @endif
-                            <table class="table align-items-center mb-0">
+                            <table class="table align-items-center mb-0" id="table">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Order</th>
                                         <th>Image</th>
                                         <th>Category</th>
                                         <th>Title</th>
@@ -49,11 +49,10 @@
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tableBodyContents">
                                     @foreach ($projects as $work)
-                                        <tr>
+                                        <tr class="tableRow" data-id="{{ $work->id }}">
                                             <td>{{ $work->id }}</td>
-                                            <td contenteditable="true" class="order-edit" data-id="{{ $work->id }}" >{{ $work->order }}</td>
                                             <td>
                                                 <img src="{{ asset('storage/' . $work->image_path) }}"
                                                     alt="{{ $work->title }}" class="img-thumbnail" style="width: 100px;">
@@ -76,7 +75,7 @@
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-between my-4">
-                                {{ $projects->links('vendor.pagination.bootstrap-5') }}
+                                {{-- {{ $projects->links('vendor.pagination.bootstrap-5') }} --}}
                             </div>
                         </div>
                     </div>
@@ -86,5 +85,17 @@
 @endsection
 
 @push('scripts')
-<script src="{{url('backend\assets\js\update-order.js')}}"></script>
+    <!-- jQuery UI CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <!-- DataTables JS CDN Link -->
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+
+    <!-- DataTables JS ( includes Bootstrap 5 for design [UI] ) CDN Link -->
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+
+    <script src="{{url('backend/assets/js/update-order.js')}}"></script>
+
+    <script type="text/javascript"></script>
+
 @endpush

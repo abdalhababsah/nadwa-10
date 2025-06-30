@@ -19,14 +19,14 @@ class ProjectController extends Controller
     public function index()
     {
         $categories = CategoryEnum::cases();
-        // Fetch Projects ordered by the newest first
-        $query = Project::orderBy('order')->latest('created_at');
+        // Fetch Projects ordered by order
+        $query = Project::orderBy('order')->latest();
 
         if (request()->has('category') && in_array(request('category'), array_column($categories, 'value'))) {
             $query->where('category', request('category'));
         }
 
-        $projects = $query->paginate(10)->withQueryString();
+        $projects = $query->get();
 
         return view('admin.projects.index', compact('projects', 'categories'));
     }
@@ -83,6 +83,9 @@ class ProjectController extends Controller
 
         // Create Project
         $project = Project::create($validated);
+
+        // $project->order = $project->id; // Set order to the ID of the project
+        // $project->save();
 
         if ($request->hasFile('images')) {
             $this->handleAdditionalImageUpload($request->file('images'), $project->id);
@@ -158,16 +161,15 @@ class ProjectController extends Controller
     public function updateOrder(Request $request)
     {
         // return response()->json(['success' => 'Method not implemented.'], 200);
-        $validated = $request->validate([
-            'orders' => 'required|array',
-            'orders.*.id' => 'integer|exists:projects,id',
-            'orders.*.order' => 'integer|min:0',
-        ]);
-
-        // Update the order of each Project
-        foreach ($validated['orders'] as $order) {
-            Project::where('id', $order['id'])->update(['order' => $order['order']]);
-        }
+        // $validated = $request->validate([
+        //     'orders' => 'required|array',
+        //     'orders.*.id' => 'integer|exists:projects,id',
+        //     'orders.*.order' => 'integer|min:0',
+        // ]);
+foreach ($request->order as $order) {
+    Project::where('id', $order['id'])->update(['order' => $order['position']]);
+ }
+        
 
         return response()->json(['success' => 'Project order updated successfully.']);
     }
