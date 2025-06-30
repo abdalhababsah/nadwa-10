@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Testemonial;
 use Illuminate\Http\Request;
-use Storage;
+use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class TestemonialController extends Controller
 {
@@ -43,8 +44,11 @@ class TestemonialController extends Controller
         
         // Handle image upload
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('testemonial', 'public');
-            $validated['image'] = $imagePath;
+            $image = $request->file('image');
+            $img = Image::read($image)->scale(150, 150)->sharpen(); // apply sharpening if available
+            $imageName = uniqid('testemonial_') . '.' . $image->getClientOriginalExtension();
+            $img->save(storage_path('app/public/testemonial/' . $imageName));
+            $validated['image'] = 'testemonial/' . $imageName;
         }
 
         // Create testemonial
@@ -81,9 +85,15 @@ class TestemonialController extends Controller
         
         // Handle image upload
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('testemonial', 'public');
+            // Delete old image if exists
             Storage::disk('public')->delete($testemonial->image);
-            $validated['image'] = $imagePath;
+
+            // Resize and save new image
+            $image = $request->file('image');
+            $img = Image::read($image)->scaleDown(150, 150)->sharpen(10); //more sharpening it'll look like drawing
+            $imageName = uniqid('testemonial_') . '.' . $image->getClientOriginalExtension();
+            $img->save(storage_path('app/public/testemonial/' . $imageName));
+            $validated['image'] = 'testemonial/' . $imageName;
         }
 
         // update testemonial

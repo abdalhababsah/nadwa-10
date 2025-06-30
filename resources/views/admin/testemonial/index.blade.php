@@ -40,7 +40,7 @@
                                                 <img src="{{ asset('storage/' . $testemonial->image) }}"
                                                     alt="{{ $testemonial->name }}" class="img-thumbnail" style="width: 100px;">
                                             </td>
-                                            <td>{{ substr($testemonial->body, 0, 100) }}</td>
+                                            <td>{{ substr($testemonial->body, 0, 50) }}</td>
                                             <td class="text-center">
                                                 <a href="{{url('/admin/testemonials', $testemonial)}}" class="btn btn-warning btn-sm">Edit</a>
                                                 <form action="{{ route('admin.testemonials.destroy', $testemonial->id) }}"

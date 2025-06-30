@@ -301,8 +301,11 @@
                                                     <p>{!! $testemonial->body !!}</p>
                                                 </div>
                                                 <div class="testimonial-tmb">
-                                                    <img src="{{ asset('storage/' . $testemonial->image) }}"
-                                                        alt="{{ $testemonial->name }}">
+                                                    <img src="@isset($testemonial->image)
+                                                    {{ asset('storage/' . $testemonial->image) }}
+                                                    @else
+                                                    {{ asset('assets/images/default.jpg') }}
+                                                    @endisset " alt="{{ $testemonial->name }}">
                                                 </div>
                                                 <div class="testimonial-title">
                                                     <h3>{{ $testemonial->name }}</h3>
