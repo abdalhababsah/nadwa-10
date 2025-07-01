@@ -11,6 +11,7 @@
                         <div class="widgets-company-icon-list">
                             <ul>
                                 <li><i class="bi bi-telephone"></i> +962797550065</li>
+                                <li><i class="bi bi-telephone"></i> +962065862316</li>
                                 <li><i class="bi bi-envelope-open"></i> archnadia@hotmail.com</li>
                                 <li><i class="bi bi-envelope-open"></i> Amman <br> Jordan</li>
                             </ul>

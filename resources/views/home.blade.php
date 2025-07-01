@@ -280,7 +280,7 @@
                 <h1>REVIEWS</h1>
             </div>
             <div class="sub-title">
-                <h2>Customer’s <span>Feedback</span></h2>
+                <h2>Customer’s Feedback</h2>
             </div>
         </div>
         <div class="row align-items-center mt-auto">
@@ -288,7 +288,6 @@
                 <div class="single-testimonial-box">
                     <div class="testimonial-content">
                         <div class="row">
-
                             <div class="owl-carousel testi-list">
                                 @isset($testemonials)
                                     @foreach ($testemonials as $testemonial)
