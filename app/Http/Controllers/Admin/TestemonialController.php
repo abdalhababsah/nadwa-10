@@ -7,6 +7,7 @@ use App\Models\Testemonial;
 use Illuminate\Http\Request;
 use Intervention\Image\Laravel\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use PHPUnit\Event\Code\Test;
 
 class TestemonialController extends Controller
 {
@@ -19,53 +20,6 @@ class TestemonialController extends Controller
         
         return view('admin.testemonial.index',[
             'testemonials' => $testemonials ,
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('admin.testemonial.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'body' => 'required|string',
-            'image' => 'nullable|image',
-        ]);
-        
-        // Handle image upload
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $img = Image::read($image)->scale(150, 150)->sharpen(); // apply sharpening if available
-            $imageName = uniqid('testemonial_') . '.' . $image->getClientOriginalExtension();
-            $img->save(storage_path('app/public/testemonial/' . $imageName));
-            $validated['image'] = 'testemonial/' . $imageName;
-        }
-
-        // Create testemonial
-        $testemonial = Testemonial::create($validated);
-
-        return redirect('admin/testemonials')->with(['success' => 'testemonial created successfully']);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit($id)
-    {
-        $testemonial = Testemonial::findOrFail($id);
-
-        return view('admin.testemonial.edit',[
-            'testemonial' => $testemonial ,
         ]);
     }
 
@@ -110,5 +64,23 @@ class TestemonialController extends Controller
         Testemonial::destroy($id);
 
         return redirect('admin/testemonials')->with(['success' => 'testemonial deleted successfully']);
+    }
+
+    public function accept(Testemonial $testemonial)
+    {
+        $testemonial->is_accepted = true;
+        $testemonial->accepted_at = now();
+        $testemonial->save();
+
+        return redirect('admin/testemonials')->with(['success' => 'Testimonial accepted successfully']);
+    }
+
+    public function decline(Testemonial $testemonial)
+    {
+        $testemonial->is_accepted = false;
+        $testemonial->accepted_at = now();
+        $testemonial->save();
+
+        return redirect('admin/testemonials')->with(['success' => 'Testimonial declined successfully']);
     }
 }

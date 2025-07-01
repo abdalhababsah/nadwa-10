@@ -6386,7 +6386,7 @@ span.fill {
 }
 
 .testimonial-area.one .testimonial-content {
-    padding: 10px;
+    padding: 12px;
     position: relative;
     z-index: 1;
     border: 1px solid #1D1D1D;
@@ -6496,6 +6496,8 @@ span.fill {
     font-size: 16px;
     line-height: 30px;
     color: #101010;
+    max-height: 350px;
+    overflow-y: auto;
 }
 
 .testimonial-area.one.upper .testimonial-title h3 {
@@ -10752,16 +10754,19 @@ Shop dtls Right
     margin: 0 0 17px;
 }
 
-.form_box input {
+.form_box input,
+.form_box textarea
+ {
     width: 100%;
     height: 55px;
     padding-left: 20px;
     border-radius: 3px;
     transition: .5s;
-    border: 1px solid #282828;
+    border-radius: 0%;
     color: #fff;
-    background: transparent;
+    background: #ffffff61;
     outline: inherit;
+    align-content: center;
 }
 
 .form_box input::placeholder {

@@ -10,7 +10,7 @@
 				<div class="col-lg-12">
 					<div class="breadcumb-content">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="{{url('/')}}">Home</a></li>
 							<li>{{$work->category}} Project Details</li>
 						</ul>
 					</div>

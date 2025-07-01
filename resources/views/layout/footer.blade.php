@@ -21,7 +21,7 @@
             <div class="col-lg-6 col-md-6">
                 <div class="widgets-company-info-box wow fadeInUp">
                     <div class="elaction-logo">
-                        <a class="logo_thumb" href="index.html" title="elaction">
+                        <a class="logo_thumb" href="{{url('/')}}" title="elaction">
                             <img src="{{asset('assets/images/logo.webp')}}" width="180" height="80px" alt="images">
                         </a>
                     </div>

@@ -275,20 +275,17 @@
 
 <div class="testimonial-area one upper">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-
+        <div class="section-title upper">
+            <div class="main-title">
+                <h1>REVIEWS</h1>
             </div>
-            <div class="col-lg-6">
+            <div class="sub-title">
+                <h2>Customer’s <span>Feedback</span></h2>
+            </div>
+        </div>
+        <div class="row align-items-center mt-auto">
+            <div class="col-lg-6 mb-5">
                 <div class="single-testimonial-box">
-                    <div class="section-title upper">
-                        <div class="main-title">
-                            <h1>REVIEWS</h1>
-                        </div>
-                        <div class="sub-title">
-                            <h2>Customer’s <span>Feedback</span></h2>
-                        </div>
-                    </div>
                     <div class="testimonial-content">
                         <div class="row">
 
@@ -298,7 +295,7 @@
                                         <div class="col-lg-12">
                                             <div class="test-box">
                                                 <div class="testimonial-description">
-                                                    <p>{!! $testemonial->body !!}</p>
+                                                    <p>{!! nl2br(e($testemonial->body)) !!}</p>
                                                 </div>
                                                 <div class="testimonial-tmb">
                                                     <img src="@isset($testemonial->image)
@@ -362,6 +359,43 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="testimonial-form" class="col-lg-6 mt-4">
+                <div class="single-testimonial-form">
+                @if (session('success'))
+                    <div class="bg-light bg-opacity-50 border lead my-5 p-5 rounded-0">
+                        {{ session('success') }}
+                    </div>
+                @else
+                    <form action="{{ route('testimonial.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3 form_box">
+                                    <input type="text" name="position" class="form-control" placeholder="Your Position" maxlength="250" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group mb-3 form_box">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" maxlength="250" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group mb-3 form_box">
+                                    <textarea name="body" class="form-control rounded-0" rows="4" placeholder="Leave Us Your Feedback" required maxlength="5000"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group mb-3 form_box">
+                                    <label for="userImg">Upload your photo (optional)</label>
+                                    <input type="file" id="userImg" name="image" class="form-control" accept="image/*" onchange="if(this.files[0] && this.files[0].size > 5*1024*1024){ alert('Maximum file size is 5MB.'); this.value=''; }">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btns">Submit</button>
+                    </form>
+                @endif
                 </div>
             </div>
         </div>

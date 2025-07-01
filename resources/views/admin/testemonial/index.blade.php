@@ -7,8 +7,6 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0 d-flex justify-content-between align-items-center">
                         <h6>Testemonials Table</h6>
-                        <a class="btn btn-primary" href="{{url('admin/testemonials/create')}}">
-                           Add Testemonial</a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -21,6 +19,11 @@
                                     </ul>
                                 </div>
                             @endif
+                            @if (session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                             <table class="table align-items-center mb-0">
                                 <thead>
                                     <tr>
@@ -28,6 +31,7 @@
                                         <th>Name</th>
                                         <th>Image</th>
                                         <th>Body</th>
+                                        <th>Accept</th>
                                         <th class="text-center">Actions</th>
                                     </tr>
                                 </thead>
@@ -37,12 +41,39 @@
                                             <td>{{ $testemonial->id }}</td>
                                             <td>{{ ucfirst($testemonial->name) }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/' . $testemonial->image) }}"
-                                                    alt="{{ $testemonial->name }}" class="img-thumbnail" style="width: 100px;">
+                                                <img src="{{ isset($testemonial->image)? asset('storage/' . $testemonial->image): asset('assets/images/default.jpg') }}"
+                                                    alt="{{ $testemonial->name }}" class="img-thumbnail" style="width: 75px;">
                                             </td>
-                                            <td>{{ substr($testemonial->body, 0, 50) }}</td>
+                                            <td>
+                                                <span 
+                                                    data-bs-toggle="tooltip" 
+                                                    data-bs-placement="top" 
+                                                    title="{{ $testemonial->body }}"
+                                                    style="cursor: pointer;"
+                                                >
+                                                    {{ Str::limit($testemonial->body, 60) }}
+                                                </span>
+                                            </td>
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function () {
+                                                    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                                                    tooltipTriggerList.map(function (tooltipTriggerEl) {
+                                                        return new bootstrap.Tooltip(tooltipTriggerEl)
+                                                    })
+                                                });
+                                            </script>
+                                            <td>
+                                                @if (is_null($testemonial->is_accepted))                                                
+                                                <a href="{{url('admin/testemonials/accept', $testemonial)}}" class="btn btn-outline-success btn-sm px-3"><i class="ni ni-check-bold"></i></a>
+                                                <a href="{{url('admin/testemonials/decline', $testemonial)}}" class="btn btn-outline-danger btn-sm px-3"><i class="ni ni-fat-remove"></i></a>
+                                                @elseif ($testemonial->is_accepted)
+                                                <span class="badge bg-success">Accepted</span>
+                                                @else
+                                                <span class="badge bg-danger">Declined</span>
+                                                @endif
+                                            </td>
                                             <td class="text-center">
-                                                <a href="{{url('/admin/testemonials', $testemonial)}}" class="btn btn-warning btn-sm">Edit</a>
+                                                {{-- <a href="{{url('/admin/testemonials', $testemonial)}}" class="btn btn-warning btn-sm">Edit</a> --}}
                                                 <form action="{{ route('admin.testemonials.destroy', $testemonial->id) }}"
                                                     method="POST" style="display: inline-block;">
                                                     @csrf

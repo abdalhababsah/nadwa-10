@@ -6,19 +6,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProjectController as LatestWorkView;
-use App\Http\Middleware\AuthMiddleware;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/testimonial', [HomeController::class, 'storeTestimonial'])->name('testimonial.store');
 Route::get('/contact', [ContactUsController::class, 'index'])->name('contact');
 Route::post('/contact/send', [ContactUsController::class, 'send'])->name('contact.send');
 
 // projects Page Route
 Route::get('/projects', [LatestWorkView::class, 'index'])->name('projects');
 
-//latest work view page
+//project view page
 Route::get('/projects/{id}', [LatestWorkView::class, 'view']); 
 Route::get('/storage/resized-projects/{filename}', [LatestWorkView::class, 'showResizedCover']);
         
@@ -44,6 +44,11 @@ Route::prefix('admin')->group(function () {
         Route::put('/projects/{id}', [ProjectController::class, 'update'])->name('admin.projects.update'); 
         Route::delete('/projects/{id}', [ProjectController::class, 'destroy'])->name('admin.projects.destroy'); // Delete latest work
 
+        // Testemonials Routes
+        Route::prefix('testemonials')->controller(TestemonialController::class)->group(function () {
+            Route::get('/accept/{testemonial}', 'accept')->name('admin.testemonials.accept');
+            Route::get('/decline/{testemonial}', 'decline')->name('admin.testemonials.decline');
+        });
         Route::get('/testemonials', [TestemonialController::class, 'index'])->name('admin.testemonials.index');
         Route::get('/testemonials/create', [TestemonialController::class, 'create'])->name('admin.testemonials.create');
         Route::post('/testemonials', [TestemonialController::class, 'store'])->name('admin.testemonials.store');
