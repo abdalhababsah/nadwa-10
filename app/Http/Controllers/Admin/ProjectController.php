@@ -160,16 +160,11 @@ class ProjectController extends Controller
      */
     public function updateOrder(Request $request)
     {
-        // return response()->json(['success' => 'Method not implemented.'], 200);
-        // $validated = $request->validate([
-        //     'orders' => 'required|array',
-        //     'orders.*.id' => 'integer|exists:projects,id',
-        //     'orders.*.order' => 'integer|min:0',
-        // ]);
-foreach ($request->order as $order) {
-    Project::where('id', $order['id'])->update(['order' => $order['position']]);
- }
-        
+        foreach ($request->order as $order) {
+            Project::where('id', $order['id'])
+                ->update(['order' => $order['position']]);
+                
+        }
 
         return response()->json(['success' => 'Project order updated successfully.']);
     }

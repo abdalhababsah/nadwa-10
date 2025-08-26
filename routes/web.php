@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\TestemonialController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\AuthController;
-use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProjectController as LatestWorkView;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsController;
@@ -48,15 +48,14 @@ Route::prefix('admin')->group(function () {
         Route::prefix('testemonials')->controller(TestemonialController::class)->group(function () {
             Route::get('/accept/{testemonial}', 'accept')->name('admin.testemonials.accept');
             Route::get('/decline/{testemonial}', 'decline')->name('admin.testemonials.decline');
+            Route::get('/',  'index')->name('admin.testemonials.index');
+            Route::get('/create',  'create')->name('admin.testemonials.create');
+            Route::post('/',  'store')->name('admin.testemonials.store');
+            Route::get('/{id}',  'edit')->name('admin.testemonials.edit');
+            Route::put('/{id}',  'update')->name('admin.testemonials.update');
+            Route::delete('/{id}',  'destroy')->name('admin.testemonials.destroy');
         });
-        Route::get('/testemonials', [TestemonialController::class, 'index'])->name('admin.testemonials.index');
-        Route::get('/testemonials/create', [TestemonialController::class, 'create'])->name('admin.testemonials.create');
-        Route::post('/testemonials', [TestemonialController::class, 'store'])->name('admin.testemonials.store');
-        Route::get('/testemonials/{id}', [TestemonialController::class, 'edit'])->name('admin.testemonials.edit');
-        Route::put('/testemonials/{id}', [TestemonialController::class, 'update'])->name('admin.testemonials.update');
-        Route::delete('/testemonials/{id}', [TestemonialController::class, 'destroy'])->name('admin.testemonials.destroy');
         
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
-
     });
 });
